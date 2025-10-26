@@ -1,0 +1,15 @@
+import webbrowser
+
+def validator(func):
+    def wrapper(url):
+        if '.' in url:
+            func(url)
+        else:
+            print('Вы ввели не верный адрес')
+    return wrapper
+
+@validator
+def open_url(url):
+    webbrowser.open(url)
+    
+open_url('https://youtu.be/l2Udm680pyY?si=AaSe2GozsEsD-jTS')
